@@ -22,10 +22,7 @@ export class UsersService {
     const user = this.usersRepository.findOneBy({ email });
 
     if (!user) {
-      throw new HttpException(
-        'User with this email does not exist',
-        HttpStatus.NOT_FOUND,
-      );
+      throw new HttpException('User with this email does not exist', HttpStatus.NOT_FOUND);
     }
 
     return user;
@@ -35,10 +32,7 @@ export class UsersService {
     const user = await this.usersRepository.findOneBy({ id });
 
     if (!user) {
-      throw new HttpException(
-        'User with this id does not exist',
-        HttpStatus.NOT_FOUND,
-      );
+      throw new HttpException('User with this id does not exist', HttpStatus.NOT_FOUND);
     }
 
     return user;
